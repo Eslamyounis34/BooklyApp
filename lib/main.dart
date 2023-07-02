@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bookly_app/core/constants.dart';
 import 'package:flutter_bookly_app/features/presentation/views/spalch_screen.dart';
 import 'package:get/route_manager.dart';
 
@@ -12,8 +13,10 @@ class BooklyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const GetMaterialApp(
-      home: SpalshScreen(),
+    return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData().copyWith(scaffoldBackgroundColor: kPrimaryColor),
+      home: const SpalshScreen(),
     );
   }
 }
