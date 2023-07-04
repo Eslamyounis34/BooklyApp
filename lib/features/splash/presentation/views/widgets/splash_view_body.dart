@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:flutter_bookly_app/core/constants.dart';
 import 'package:flutter_bookly_app/core/utils/assets.dart';
+import 'package:flutter_bookly_app/features/home/presentation/views/books_home.dart';
 import 'package:flutter_bookly_app/features/splash/presentation/views/widgets/sliding_text.dart';
+import 'package:get/route_manager.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -20,6 +23,14 @@ class _SplashViewBodyState extends State<SplashViewBody>
   void initState() {
     super.initState();
     initSlideAnimation();
+    navigateToHome();
+  }
+
+  void navigateToHome() {
+    Future.delayed(const Duration(seconds: 2), () {
+      Get.to(const BooksHome(),
+          transition: Transition.rightToLeftWithFade, duration: kDuration);
+    });
   }
 
   void initSlideAnimation() {

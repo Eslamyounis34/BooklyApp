@@ -24,7 +24,7 @@ class BooklyApp extends StatelessWidget {
       theme: ThemeData.dark().copyWith(
           scaffoldBackgroundColor: kPrimaryColor,
           appBarTheme:
-              AppBarTheme(systemOverlayStyle: SystemUiOverlayStyle.dark)),
+              const AppBarTheme(systemOverlayStyle: SystemUiOverlayStyle.dark)),
       home: const SpalshScreen(),
     );
   }
