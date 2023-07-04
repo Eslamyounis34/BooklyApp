@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bookly_app/core/constants.dart';
-import 'package:flutter_bookly_app/features/presentation/views/spalch_screen.dart';
+import 'package:flutter_bookly_app/features/splash/presentation/views/spalch_screen.dart';
 import 'package:get/route_manager.dart';
 
 void main() {
