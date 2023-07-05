@@ -15,16 +15,16 @@ class BooklyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark.copyWith(
-      statusBarColor: Colors.white, // set status bar color
       statusBarBrightness: Brightness.dark, // set status bar brightness
+
+      statusBarIconBrightness: Brightness.light, // For Android (dark icons)
     ));
 
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
           scaffoldBackgroundColor: kPrimaryColor,
-          appBarTheme:
-              const AppBarTheme(systemOverlayStyle: SystemUiOverlayStyle.dark)),
+          appBarTheme: const AppBarTheme(backgroundColor: kPrimaryColor)),
       home: const SpalshScreen(),
     );
   }

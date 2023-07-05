@@ -8,7 +8,7 @@ class CustomBookListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+      padding: const EdgeInsets.only(right: 8.0),
       child: AspectRatio(
         //width to hieght
         aspectRatio: 2.8 / 4,
