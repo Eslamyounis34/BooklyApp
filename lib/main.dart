@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bookly_app/core/constants.dart';
 import 'package:flutter_bookly_app/features/splash/presentation/views/spalch_screen.dart';
 import 'package:get/route_manager.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const BooklyApp());
@@ -24,6 +25,8 @@ class BooklyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
           scaffoldBackgroundColor: kPrimaryColor,
+          textTheme:
+              GoogleFonts.montserratTextTheme(ThemeData.dark().textTheme),
           appBarTheme: const AppBarTheme(backgroundColor: kPrimaryColor)),
       home: const SpalshScreen(),
     );
