@@ -5,6 +5,7 @@ import 'package:flutter_bookly_app/core/constants.dart';
 import 'package:flutter_bookly_app/core/utils/assets.dart';
 import 'package:flutter_bookly_app/features/home/presentation/views/books_home.dart';
 import 'package:flutter_bookly_app/features/splash/presentation/views/widgets/sliding_text.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/route_manager.dart';
 
 class SplashViewBody extends StatefulWidget {
@@ -55,6 +56,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
+        //   SvgPicture.asset('assets/images/Logo_svg.svg'),
         Image.asset(AssetsData.logo),
         const SizedBox(
           height: 16,
