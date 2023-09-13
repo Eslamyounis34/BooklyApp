@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../../../../../core/constants.dart';
 import '../../../../../core/utils/assets.dart';
 import '../../../../../core/utils/styles.dart';
+import 'book_rating.dart';
 
 class BesTSellerListItem extends StatelessWidget {
   const BesTSellerListItem({super.key});
@@ -36,8 +37,8 @@ class BesTSellerListItem extends StatelessWidget {
                   width: MediaQuery.of(context).size.width * .5,
                   child: Text(
                     "Harry Potter and the golbet of fire",
-                    style:
-                        Styles.textStyle20.copyWith(fontFamily: kGSectraFine),
+                    style: Styles.textStyle20.copyWith(
+                        fontFamily: kGSectraFine, fontWeight: FontWeight.bold),
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                   ),
@@ -69,36 +70,6 @@ class BesTSellerListItem extends StatelessWidget {
           )
         ],
       ),
-    );
-  }
-}
-
-class BookRating extends StatelessWidget {
-  const BookRating({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: const [
-        Icon(
-          FontAwesomeIcons.solidStar,
-          color: Color(0xffFFDD4F),
-        ),
-        SizedBox(
-          width: 3,
-        ),
-        Text(
-          '4.8',
-          style: Styles.textStyle16,
-        ),
-        SizedBox(
-          width: 4,
-        ),
-        Text(
-          '(2390)',
-          style: Styles.textStyle14,
-        )
-      ],
     );
   }
 }
