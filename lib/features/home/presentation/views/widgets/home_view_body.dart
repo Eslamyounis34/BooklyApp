@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_bookly_app/core/utils/assets.dart';
+import 'package:flutter_bookly_app/core/utils/styles.dart';
 import 'package:flutter_bookly_app/features/home/presentation/views/widgets/custom_app_bar.dart';
 
 import '../../../../../core/constants.dart';
@@ -25,10 +26,10 @@ class HomeViewBody extends StatelessWidget {
           ),
           Text(
             'Best Seller',
-            style: mediumTitle,
+            style: Styles.textStyle18,
             textAlign: TextAlign.start,
           ),
-          SizedBox(height: 16),
+          SizedBox(height: 20),
           BesTSellerListItem()
         ],
       ),
@@ -56,8 +57,41 @@ class BesTSellerListItem extends StatelessWidget {
                       fit: BoxFit.fill)),
             ),
           ),
-          Column(
-            children: [Text("Harry Potter and the golbet of fire")],
+          Padding(
+            padding: const EdgeInsets.only(left: 30),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * .5,
+                  child: Text(
+                    "Harry Potter and the golbet of fire",
+                    style:
+                        Styles.textStyle20.copyWith(fontFamily: kGSectraFine),
+                  ),
+                ),
+                const SizedBox(
+                  height: 3,
+                ),
+                Text(
+                  'J.K Rowling',
+                  style:
+                      Styles.textStyle14.copyWith(fontWeight: FontWeight.w500),
+                ),
+                const SizedBox(
+                  height: 3,
+                ),
+                Row(
+                  children: [
+                    Text(
+                      '19.99',
+                      style: Styles.textStyle20
+                          .copyWith(fontWeight: FontWeight.bold),
+                    )
+                  ],
+                )
+              ],
+            ),
           )
         ],
       ),
