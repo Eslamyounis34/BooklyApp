@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bookly_app/core/constants.dart';
+import 'package:flutter_bookly_app/core/utils/app_routing.dart';
 import 'package:flutter_bookly_app/features/splash/presentation/views/spalch_screen.dart';
 import 'package:get/route_manager.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -21,14 +22,14 @@ class BooklyApp extends StatelessWidget {
       statusBarIconBrightness: Brightness.light, // For Android (dark icons)
     ));
 
-    return GetMaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
           scaffoldBackgroundColor: kPrimaryColor,
           textTheme:
               GoogleFonts.montserratTextTheme(ThemeData.dark().textTheme),
           appBarTheme: const AppBarTheme(backgroundColor: kPrimaryColor)),
-      home: const SpalshScreen(),
+      routerConfig: AppRouting.router,
     );
   }
 }
