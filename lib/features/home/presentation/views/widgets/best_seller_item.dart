@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_bookly_app/core/utils/app_routing.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../../core/constants.dart';
 import '../../../../../core/utils/assets.dart';
@@ -12,7 +14,9 @@ class BesTSellerListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        GoRouter.of(context).push(AppRouting.kBookDetails);
+      },
       child: SizedBox(
         height: 120,
         child: Row(

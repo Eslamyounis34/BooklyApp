@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_bookly_app/core/constants.dart';
+import 'package:flutter_bookly_app/core/utils/app_routing.dart';
 import 'package:flutter_bookly_app/core/utils/assets.dart';
 import 'package:flutter_bookly_app/features/home/presentation/views/books_home.dart';
 import 'package:flutter_bookly_app/features/splash/presentation/views/widgets/sliding_text.dart';
@@ -30,7 +31,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
   void navigateToHome() {
     Future.delayed(const Duration(seconds: 2), () {
-      GoRouter.of(context).push('/booksHome');
+      GoRouter.of(context).push(AppRouting.kHome);
       // Get.to(const BooksHome(),
       //     transition: Transition.fade, duration: kDuration);
     });
