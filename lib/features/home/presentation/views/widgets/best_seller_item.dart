@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bookly_app/core/utils/app_routing.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
@@ -55,8 +56,8 @@ class BesTSellerListItem extends StatelessWidget {
                   ),
                   Text(
                     'J.K Rowling',
-                    style: Styles.textStyle14
-                        .copyWith(fontWeight: FontWeight.w500),
+                    style: Styles.textStyle14.copyWith(
+                        fontWeight: FontWeight.w500, color: Colors.grey),
                   ),
                   const SizedBox(
                     height: 3,

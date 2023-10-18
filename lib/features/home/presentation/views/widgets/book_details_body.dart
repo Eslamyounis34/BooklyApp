@@ -23,7 +23,10 @@ class BookDetailsBody extends StatelessWidget {
             hasScrollBody: false,
             child: Column(
               children: [
-                const CustomDetailsAppBar(),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 0),
+                  child: CustomDetailsAppBar(),
+                ),
                 const SizedBox(
                   height: 24,
                 ),
@@ -76,6 +79,9 @@ class BookDetailsBody extends StatelessWidget {
                   height: 16,
                 ),
                 const SimilarBooksListView(),
+                const SizedBox(
+                  height: 40,
+                )
               ],
             ))
       ],

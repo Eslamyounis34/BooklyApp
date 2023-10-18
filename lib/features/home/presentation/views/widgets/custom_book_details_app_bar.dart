@@ -12,12 +12,14 @@ class CustomDetailsAppBar extends StatelessWidget {
           onPressed: () {},
           icon: const Icon(Icons.close),
           iconSize: 31,
+          color: Colors.white,
         ),
         const Spacer(),
         IconButton(
           onPressed: () {},
           icon: const Icon(Icons.shopping_cart_outlined),
           iconSize: 25,
+          color: Colors.white,
         )
       ],
     );

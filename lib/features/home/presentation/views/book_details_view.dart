@@ -9,11 +9,7 @@ class BookDetailsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: SafeArea(
-          child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 30),
-        child: BookDetailsBody(),
-      )),
+      body: SafeArea(child: BookDetailsBody()),
     );
   }
 }

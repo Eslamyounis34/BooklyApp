@@ -24,7 +24,7 @@ class CustomAppBar extends StatelessWidget {
               GoRouter.of(context).push(AppRouting.kSearch);
             },
             icon: Image.asset(AssetsData.search),
-            iconSize: 20,
+            iconSize: 16,
           )
         ],
       ),
