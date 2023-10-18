@@ -11,7 +11,7 @@ class CustomBookListItem extends StatelessWidget {
       padding: const EdgeInsets.only(right: 8.0),
       child: AspectRatio(
         //width to hieght
-        aspectRatio: 2.8 / 4,
+        aspectRatio: 2.6 / 4,
         child: Container(
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(16),
