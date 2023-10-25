@@ -9,7 +9,9 @@ class CustomDetailsAppBar extends StatelessWidget {
     return Row(
       children: [
         IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
           icon: const Icon(Icons.close),
           iconSize: 31,
           color: Colors.white,
