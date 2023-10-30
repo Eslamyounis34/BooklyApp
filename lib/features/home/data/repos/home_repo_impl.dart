@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:flutter_bookly_app/core/errors/failures.dart';
 import 'package:flutter_bookly_app/book_model/book_model.dart';
 import 'package:dartz/dartz.dart';
@@ -26,8 +27,12 @@ class HomeRepoImpl implements HomeRepo {
         books.add(BookModel.fromJson(item));
       }
       return right(books);
-    } on Exception catch (e) {
-      return left(ServerFailure());
+    } catch (e) {
+      if (e is DioError) {
+        return left(ServerFailure.fromDioError(e));
+      }
+
+      return left(ServerFailure(e.toString()));
     }
   }
 }
