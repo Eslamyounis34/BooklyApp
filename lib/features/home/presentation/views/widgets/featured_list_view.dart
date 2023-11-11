@@ -1,4 +1,8 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bookly_app/core/widgets/custom_error.dart';
+import 'package:flutter_bookly_app/core/widgets/custom_loading_alert.dart';
+import 'package:flutter_bookly_app/features/home/presentation/manager/featured_books_cubit/featured_books_cubit.dart';
 
 import 'custom_list_item.dart';
 
@@ -7,14 +11,29 @@ class FeaturedListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: MediaQuery.of(context).size.height * .3,
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        itemBuilder: (context, index) {
-          return const CustomBookListItem();
-        },
-      ),
+    return BlocBuilder<FeaturedBooksCubit, FeaturedBooksState>(
+      builder: (context, state) {
+        if (state is FeaturedBooksSuccess) {
+          return SizedBox(
+            height: MediaQuery.of(context).size.height * .3,
+            child: ListView.builder(
+              physics: const BouncingScrollPhysics(),
+              itemCount: state.books.length,
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context, index) {
+                return CustomBookListItem(
+                  bookImageUrl:
+                      state.books[index].volumeInfo.imageLinks.thumbnail,
+                );
+              },
+            ),
+          );
+        } else if (state is FeaturedBooksError) {
+          return CustomError(errMessage: state.errMsg);
+        } else {
+          return const CustomLoadingAlert();
+        }
+      },
     );
   }
 }
