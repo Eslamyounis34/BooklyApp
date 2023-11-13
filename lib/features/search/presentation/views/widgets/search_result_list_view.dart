@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
-import '../../../../home/presentation/views/widgets/best_seller_item.dart';
+import '../../../../home/presentation/views/widgets/newest_book_item.dart';
 
 class SearchResultListView extends StatelessWidget {
   const SearchResultListView({super.key});
@@ -14,7 +14,12 @@ class SearchResultListView extends StatelessWidget {
         itemBuilder: (context, index) {
           return const Padding(
             padding: EdgeInsets.symmetric(vertical: 10),
-            child: BesTSellerListItem(),
+            child: Text('data'),
+            // child: NewestBookItem(
+            //   bookImage: '',
+            //   bookAuthor: '',
+            //   bookName: '',
+            // ),
           );
         });
   }

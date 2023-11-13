@@ -21,8 +21,10 @@ class CustomBookListItem extends StatelessWidget {
             child: CachedNetworkImage(
               imageUrl: bookImageUrl,
               errorWidget: (context, url, error) => const Icon(Icons.error),
-              placeholder: (context, url) =>
-                  const Center(child: CircularProgressIndicator()),
+              placeholder: (context, url) => const Center(
+                  child: CircularProgressIndicator(
+                color: Colors.white,
+              )),
               fit: BoxFit.fill,
             )),
       ),
