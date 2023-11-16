@@ -32,7 +32,7 @@ class BookDetailsBody extends StatelessWidget {
                     height: 12,
                   ),
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: width * 0.18),
+                    padding: EdgeInsets.symmetric(horizontal: width * 0.24),
                     child: CustomBookListItem(
                       bookImageUrl:
                           bookModel.volumeInfo.imageLinks?.thumbnail ?? '',
@@ -68,9 +68,11 @@ class BookDetailsBody extends StatelessWidget {
                   const SizedBox(
                     height: 24,
                   ),
-                  const Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 15),
-                    child: BookActions(),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 15),
+                    child: BookActions(
+                      bookModel: bookModel,
+                    ),
                   ),
                   const Expanded(
                     child: SizedBox(
