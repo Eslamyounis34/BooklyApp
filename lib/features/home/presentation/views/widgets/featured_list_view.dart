@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bookly_app/core/utils/app_routing.dart';
 import 'package:flutter_bookly_app/core/widgets/custom_error.dart';
 import 'package:flutter_bookly_app/core/widgets/custom_loading_alert.dart';
 import 'package:flutter_bookly_app/features/home/presentation/manager/featured_books_cubit/featured_books_cubit.dart';
+import 'package:go_router/go_router.dart';
 
 import 'custom_list_item.dart';
 
@@ -21,9 +23,16 @@ class FeaturedListView extends StatelessWidget {
               itemCount: state.books.length,
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
-                return CustomBookListItem(
-                  bookImageUrl:
-                      state.books[index].volumeInfo.imageLinks?.thumbnail ?? '',
+                return GestureDetector(
+                  onTap: () {
+                    GoRouter.of(context).push(AppRouting.kBookDetails,
+                        extra: state.books[index]);
+                  },
+                  child: CustomBookListItem(
+                    bookImageUrl:
+                        state.books[index].volumeInfo.imageLinks?.thumbnail ??
+                            '',
+                  ),
                 );
               },
             ),

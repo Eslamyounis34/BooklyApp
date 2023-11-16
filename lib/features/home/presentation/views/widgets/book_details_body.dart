@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:flutter_bookly_app/book_model/book_model.dart';
 import 'package:flutter_bookly_app/core/utils/styles.dart';
 import 'package:flutter_bookly_app/core/widgets/custom_button.dart';
 import 'package:flutter_bookly_app/features/home/presentation/views/widgets/book_rating.dart';
@@ -11,8 +12,9 @@ import 'book_actions.dart';
 import 'custom_book_details_app_bar.dart';
 
 class BookDetailsBody extends StatelessWidget {
-  const BookDetailsBody({super.key});
+  const BookDetailsBody({super.key, required this.bookModel});
 
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
@@ -27,21 +29,23 @@ class BookDetailsBody extends StatelessWidget {
                 children: [
                   const CustomDetailsAppBar(),
                   const SizedBox(
-                    height: 24,
+                    height: 12,
                   ),
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: width * 0.18),
                     child: CustomBookListItem(
-                      bookImageUrl: '',
+                      bookImageUrl:
+                          bookModel.volumeInfo.imageLinks?.thumbnail ?? '',
                     ),
                   ),
                   const SizedBox(
                     height: 32,
                   ),
                   Text(
-                    "The Jungle Book",
+                    bookModel.volumeInfo.title!,
                     style: Styles.textStyle30
                         .copyWith(fontWeight: FontWeight.bold),
+                    textAlign: TextAlign.center,
                   ),
                   const SizedBox(
                     height: 6,
@@ -49,16 +53,16 @@ class BookDetailsBody extends StatelessWidget {
                   Opacity(
                       opacity: .7,
                       child: Text(
-                        "Rudyard Kipling",
+                        bookModel.volumeInfo.authors![0],
                         style: Styles.textStyle18
                             .copyWith(fontStyle: FontStyle.italic),
                       )),
                   const SizedBox(
                     height: 16,
                   ),
-                  const BookRating(
-                    rating: 5,
-                    count: 250,
+                  BookRating(
+                    rating: bookModel.volumeInfo?.averageRating ?? 0,
+                    count: bookModel.volumeInfo?.ratingsCount ?? 0,
                     mainAxisAlignment: MainAxisAlignment.center,
                   ),
                   const SizedBox(
