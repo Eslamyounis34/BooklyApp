@@ -30,9 +30,10 @@ class SearchResultListView extends StatelessWidget {
               });
         } else if (state is SearchScreenError) {
           return CustomError(errMessage: state.errMsg);
-        } else {
+        } else if (state is SearchScreenLoading) {
           return const CustomLoadingAlert();
         }
+        return Container();
       },
     );
   }

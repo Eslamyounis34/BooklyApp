@@ -16,8 +16,8 @@ class SearchViewScreen extends StatefulWidget {
 class _SearchViewScreenState extends State<SearchViewScreen> {
   @override
   void initState() {
-    BlocProvider.of<SearchScreenCubit>(context)
-        .fetchSerachQueryBooks('History');
+    // BlocProvider.of<SearchScreenCubit>(context)
+    //     .fetchSerachQueryBooks('History');
     super.initState();
   }
 
