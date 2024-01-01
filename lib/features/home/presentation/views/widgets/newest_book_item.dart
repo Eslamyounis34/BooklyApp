@@ -51,7 +51,9 @@ class NewestBookItem extends StatelessWidget {
                     height: 3,
                   ),
                   Text(
-                    bookModel.volumeInfo.authors![0].toString(),
+                    bookModel?.volumeInfo?.authors?.isNotEmpty ?? false
+                        ? bookModel.volumeInfo.authors[0].toString()
+                        : 'Author Not Available',
                     style: Styles.textStyle14.copyWith(
                         fontWeight: FontWeight.w500, color: Colors.grey),
                   ),

@@ -36,8 +36,7 @@ class _SearchViewBodyState extends State<SearchViewBody> {
               searchQuery = value;
             },
             onPressed: () {
-              BlocProvider.of<SearchScreenCubit>(context)
-                  .fetchSerachQueryBooks(searchQuery!);
+              search(context);
             },
           ),
           const SizedBox(
@@ -51,5 +50,10 @@ class _SearchViewBodyState extends State<SearchViewBody> {
         ],
       ),
     );
+  }
+
+  void search(BuildContext context) {
+    BlocProvider.of<SearchScreenCubit>(context)
+        .fetchSerachQueryBooks(searchQuery!);
   }
 }
