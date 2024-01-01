@@ -27,7 +27,12 @@ class BookDetailsBody extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 15),
               child: Column(
                 children: [
-                  const CustomDetailsAppBar(),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  CustomDetailsAppBar(
+                    bookUrl: bookModel.volumeInfo.previewLink ?? '',
+                  ),
                   const SizedBox(
                     height: 12,
                   ),

@@ -1,8 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:share/share.dart';
 
 class CustomDetailsAppBar extends StatelessWidget {
-  const CustomDetailsAppBar({super.key});
+  const CustomDetailsAppBar({super.key, required this.bookUrl});
+
+  final String bookUrl;
 
   @override
   Widget build(BuildContext context) {
@@ -18,8 +21,10 @@ class CustomDetailsAppBar extends StatelessWidget {
         ),
         const Spacer(),
         IconButton(
-          onPressed: () {},
-          icon: const Icon(Icons.shopping_cart_outlined),
+          onPressed: () {
+            Share.share('$bookUrl', subject: 'Preview This Book!');
+          },
+          icon: const Icon(Icons.share_sharp),
           iconSize: 25,
           color: Colors.white,
         )
